@@ -2,7 +2,8 @@
   <div :class="mobile.toLowerCase()" class="vhd-container">
     <input v-model="value"
            :placeholder="placeholder"
-           type="text" class="vhd-input" aria-label="vue-hotel-datepicker-input"
+           :class="inputClass"
+           type="text" aria-label="vue-hotel-datepicker-input"
            @click="active = !active">
     <div v-if="active" class="vhd-picker">
       <div class="vhd-calendar">
@@ -96,6 +97,10 @@ export default {
   },
   directives: {},
   props: {
+    inputClass: {
+      type: String,
+      default: 'vhd-input'
+    },
     placeholder: {
       type: String,
       default: 'Select a date range'
